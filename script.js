@@ -3,10 +3,12 @@ function rot13(str) {
   var result = "";
   for (var i = 0; i < str.length; i++) {
     var c = str.charCodeAt(i);
-    if (c >= 65 && c <= 90) {
+    if (c >= 65 && c <= 90) { //65-A,Z-90 
+		//fromCharCode - convert char to ascii
       result += String.fromCharCode((c - 65 + 13) % 26 + 65);
     } else {
       result += str.charAt(i);
+		// charAt - convert ascii to char 
     }
   }
   return result;
