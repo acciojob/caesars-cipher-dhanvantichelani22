@@ -1,5 +1,16 @@
 // Your Script here.
-
+function rot13(str) {
+  var result = "";
+  for (var i = 0; i < str.length; i++) {
+    var c = str.charCodeAt(i);
+    if (c >= 65 && c <= 90) {
+      result += String.fromCharCode((c - 65 + 13) % 26 + 65);
+    } else {
+      result += str.charAt(i);
+    }
+  }
+  return result;
+}
 const lookup = {
   'A': 'N','B': 'O','C': 'P','D': 'Q',
   'E': 'R','F': 'S','G': 'T','H': 'U',
